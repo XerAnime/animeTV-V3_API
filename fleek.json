@@ -1,0 +1,8 @@
+{
+  "build": {
+    "image": "python:3.9-alpine",
+    "command": "pip install -r requirements.txt && python main.py",
+    "publicDir": "/(.*)",
+    "baseDir": "/(.*)"
+  }
+}
