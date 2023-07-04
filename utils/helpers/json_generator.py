@@ -129,7 +129,14 @@ class malJsonGenerator:
   
   def animeInfo(data, malid):
     soup = BeautifulSoup(data.text,"html.parser")
-    songsarr = [(x.select("td")[1].select("input")) for x in soup.select(".di-tc table tr")]
+    songsarr = []
+    for x in soup.select(".di-tc table tr"):
+      if len(x.select("td")) != 3:
+        pass
+      else:
+        song = (x.select("td"))[1].select("input")
+        songsarr.append(song)
+    # print(songsarr)
     songs = []
     for x in songsarr:
        if len(x) != 0 and x[0]["value"] != "":
