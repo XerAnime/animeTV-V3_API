@@ -66,4 +66,4 @@ def getEpStreamingLink(iframeUrl):
   headers = {"User-Agent" : USER_AGENT,"X-Requested-With": "XMLHttpRequest"}
   response = requests.get(request_url,headers = headers)
   decryptedJson = decrypt_encrypted_response(response.json()["data"])
-  return json.loads(decryptedJson)
+  return json.loads(decryptedJson) 
