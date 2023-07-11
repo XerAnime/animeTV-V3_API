@@ -55,10 +55,6 @@ def urlParser(url):
   return urldict
 
 def getEpStreamingLink(iframeUrl):
-  if "typesub" in iframeUrl:
-    pass
-  else:
-    iframeUrl = iframeUrl + "&typesub=DUB"
   urldict = urlParser(iframeUrl)
   USER_AGENT = request_headers()["User-Agent"]
   encrypted_params = generate_encrypted_parameters(iframeUrl)
