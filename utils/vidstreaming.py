@@ -24,7 +24,7 @@ def unpad(data):
   return data[:-padding_len]
 
 def generate_encrypted_parameters(url):
-  vid_id = url.split("?")[1].split("&")[0].split("=")[1]
+  vid_id = url.split("?")[1].split("&")[0].split("=")[1].strip("=")
   cipher_key = AES.new(key, AES.MODE_CBC, iv)
   padded_key = pad(vid_id.encode(), AES.block_size)
   encrypted_key = cipher_key.encrypt(padded_key)
@@ -55,6 +55,10 @@ def urlParser(url):
   return urldict
 
 def getEpStreamingLink(iframeUrl):
+  # if "typesub" in iframeUrl:
+  #   pass
+  # else:
+  #   iframeUrl = iframeUrl + "&typesub=DUB"
   urldict = urlParser(iframeUrl)
   USER_AGENT = request_headers()["User-Agent"]
   encrypted_params = generate_encrypted_parameters(iframeUrl)
