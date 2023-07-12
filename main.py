@@ -52,7 +52,7 @@ def charactersinfo(animeid):
   return json.loads(mal().characters(animeid))
 
 ##  extract vidstreaming link  ##
-@app.route("/episode/streaminglink/vidstreaming")
+@app.route("/streaminglink/vidstreaming")
 def getVidstreamingEmbedLink():
   iframe = request.args.get("iframeUrl")
   return getEpStreamingLink(iframe)
