@@ -1,5 +1,5 @@
 sanji = "https://sanji.to"
-gogo1 = "https://www3.gogoanimes.fi"
-gogo2 = "https://gogoanime.llc"
+gogo1 = "https://gogoanime3.net"
+gogo2 = "https://gogoanime3.net"
 gogo_ajax = "https://ajax.gogo-load.com"
 mal = "https://myanimelist.net"
